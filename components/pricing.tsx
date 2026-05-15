@@ -1,6 +1,5 @@
-"use client"
-
 import Image from "next/image"
+import { whatsappWithText } from "@/lib/site"
 
 const products = [
   { name: "Винный бокал Evans", price: 1200, image: "https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?w=200&h=200&fit=crop" },
@@ -17,7 +16,7 @@ function formatPrice(price: number): string {
 
 export function Pricing() {
   return (
-    <section className="py-16 md:py-24 bg-background">
+    <section id="pricing" className="scroll-mt-28 md:scroll-mt-32 py-16 md:py-24 bg-background">
       <div className="max-w-[1400px] mx-auto px-4">
         <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-light tracking-wide mb-4">
           ПРИМЕРЫ ЦЕН
@@ -28,9 +27,12 @@ export function Pricing() {
         
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
           {products.map((product) => (
-            <div 
+            <a
               key={product.name}
-              className="group bg-card border border-border hover:border-accent transition-all duration-300 cursor-pointer"
+              href={whatsappWithText(`Здравствуйте! Интересует аренда: ${product.name}`)}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group bg-card border border-border hover:border-accent transition-all duration-300 cursor-pointer block"
             >
               <div className="relative h-40 overflow-hidden">
                 <Image
@@ -49,7 +51,7 @@ export function Pricing() {
                   <span className="text-xs text-muted-foreground">/шт</span>
                 </p>
               </div>
-            </div>
+            </a>
           ))}
         </div>
       </div>

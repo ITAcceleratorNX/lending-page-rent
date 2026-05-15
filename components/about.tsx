@@ -31,7 +31,7 @@ export function About() {
   const [openIndex, setOpenIndex] = useState<number | null>(null)
 
   return (
-    <section className="py-16 md:py-24 bg-background">
+    <section id="about" className="scroll-mt-28 md:scroll-mt-32 py-16 md:py-24 bg-background">
       <div className="max-w-[1400px] mx-auto px-4">
         <span className="text-xs uppercase tracking-luxury text-muted-foreground mb-8 block">
           О нас и нашем сервисе
@@ -76,7 +76,7 @@ export function About() {
             </div>
             
             {/* Services Accordion */}
-            <div className="space-y-0 border-t border-border">
+            <div className="space-y-0 border-t border-border scroll-mt-28 md:scroll-mt-32" id="services">
               {services.map((service, index) => (
                 <div key={index} className="border-b border-border">
                   <button
@@ -98,7 +98,7 @@ export function About() {
             </div>
             
             <a 
-              href="/services"
+              href="#services"
               className="inline-flex items-center gap-3 border border-border px-6 py-3 text-sm uppercase tracking-luxury hover:border-accent hover:text-accent transition-colors"
             >
               <span>Все услуги</span>

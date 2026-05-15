@@ -11,7 +11,7 @@ import { WhatsAppButton } from "@/components/whatsapp-button"
 
 export default function HomePage() {
   return (
-    <main className="min-h-screen">
+    <main id="top" className="min-h-screen scroll-smooth">
       <TopBar />
       <Header />
       <HeroSlider />

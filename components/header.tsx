@@ -2,19 +2,33 @@
 
 import { MapPin, Phone, ShoppingBag, User, Menu, ChevronDown, Search, MessageCircle } from "lucide-react"
 import { useState } from "react"
+import { scrollToSection } from "@/lib/scroll-to-section"
 
 export function TopBar() {
   return (
     <div className="bg-background border-b border-border">
       <div className="max-w-[1400px] mx-auto px-4 py-2 flex items-center justify-between">
         <div className="flex items-center gap-4">
-          <button className="flex items-center gap-1 text-muted-foreground hover:text-foreground transition-colors">
+          <button
+            type="button"
+            aria-label="Как добраться"
+            onClick={() => scrollToSection("contacts")}
+            className="flex items-center gap-1 text-muted-foreground hover:text-foreground transition-colors"
+          >
             <MapPin className="w-4 h-4" />
           </button>
-          <button className="flex items-center gap-1 text-muted-foreground hover:text-foreground transition-colors">
+          <a
+            href="tel:+77585957160"
+            aria-label="Позвонить"
+            className="flex items-center gap-1 text-muted-foreground hover:text-foreground transition-colors"
+          >
             <Phone className="w-4 h-4" />
-          </button>
-          <button className="flex items-center gap-1.5 text-sm text-muted-foreground hover:text-foreground transition-colors">
+          </a>
+          <button
+            type="button"
+            onClick={() => scrollToSection("contacts")}
+            className="flex items-center gap-1.5 text-sm text-muted-foreground hover:text-foreground transition-colors"
+          >
             <span>Алматы</span>
             <ChevronDown className="w-3.5 h-3.5" />
           </button>
@@ -31,13 +45,28 @@ export function TopBar() {
         </a>
         
         <div className="flex items-center gap-4">
-          <button className="text-muted-foreground hover:text-foreground transition-colors">
+          <button
+            type="button"
+            aria-label="Примеры цен"
+            onClick={() => scrollToSection("pricing")}
+            className="text-muted-foreground hover:text-foreground transition-colors"
+          >
             <ShoppingBag className="w-5 h-5" />
           </button>
-          <button className="text-muted-foreground hover:text-foreground transition-colors">
+          <button
+            type="button"
+            aria-label="О компании"
+            onClick={() => scrollToSection("about")}
+            className="text-muted-foreground hover:text-foreground transition-colors"
+          >
             <User className="w-5 h-5" />
           </button>
-          <button className="text-muted-foreground hover:text-foreground transition-colors">
+          <button
+            type="button"
+            aria-label="Каталог на главной"
+            onClick={() => scrollToSection("catalog")}
+            className="text-muted-foreground hover:text-foreground transition-colors"
+          >
             <Menu className="w-5 h-5" />
           </button>
         </div>
@@ -69,7 +98,11 @@ export function Header() {
         </a>
         
         {/* Catalog Button */}
-        <button className="flex items-center gap-2 bg-accent text-accent-foreground px-6 py-3 uppercase text-sm tracking-luxury hover:bg-accent/90 transition-colors">
+        <button
+          type="button"
+          onClick={() => scrollToSection("catalog")}
+          className="flex items-center gap-2 bg-accent text-accent-foreground px-6 py-3 uppercase text-sm tracking-luxury hover:bg-accent/90 transition-colors"
+        >
           <Menu className="w-4 h-4" />
           <span>Каталог</span>
         </button>
@@ -81,9 +114,22 @@ export function Header() {
             placeholder="Я хочу арендовать..."
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
+            onKeyDown={(e) => {
+              if (e.key === "Enter") {
+                e.preventDefault()
+                scrollToSection("catalog")
+              }
+            }}
             className="w-full bg-transparent border-b border-border py-2 pr-10 text-sm focus:outline-none focus:border-accent transition-colors placeholder:text-muted-foreground"
           />
-          <Search className="absolute right-0 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground" />
+          <button
+            type="button"
+            aria-label="Найти в каталоге"
+            onClick={() => scrollToSection("catalog")}
+            className="absolute right-0 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-accent transition-colors"
+          >
+            <Search className="w-5 h-5" />
+          </button>
         </div>
       </div>
     </header>

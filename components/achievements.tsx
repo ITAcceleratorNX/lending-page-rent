@@ -2,7 +2,7 @@ import Image from "next/image"
 
 export function Achievements() {
   return (
-    <section className="relative py-16 md:py-24">
+    <section id="achievements" className="relative scroll-mt-28 md:scroll-mt-32 py-16 md:py-24">
       {/* Background with overlay */}
       <div className="absolute inset-0">
         <Image

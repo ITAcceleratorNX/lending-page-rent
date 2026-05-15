@@ -31,7 +31,7 @@ export function Gallery() {
   }
 
   return (
-    <section className="py-16 md:py-24 bg-background">
+    <section id="gallery" className="scroll-mt-28 md:scroll-mt-32 py-16 md:py-24 bg-background">
       <div className="max-w-[1400px] mx-auto px-4">
         <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-light tracking-wide mb-2">
           СОЗДАЙТЕ УНИКАЛЬНУЮ СЕРВИРОВКУ

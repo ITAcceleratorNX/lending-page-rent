@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react"
 import { ChevronLeft, ChevronRight } from "lucide-react"
 import Image from "next/image"
+import { scrollToSection } from "@/lib/scroll-to-section"
 
 const heroSlides = [
   {
@@ -35,7 +36,7 @@ export function HeroSlider() {
   }
 
   return (
-    <section className="relative bg-background overflow-hidden">
+    <section id="hero" className="relative bg-background overflow-hidden scroll-mt-28 md:scroll-mt-32">
       <div className="max-w-[1400px] mx-auto px-4">
         <div className="relative h-[500px] md:h-[600px] flex items-center">
           {/* Background Image */}
@@ -66,6 +67,15 @@ export function HeroSlider() {
               {heroSlides[currentSlide].products.map((product, index) => (
                 <div 
                   key={product.name}
+                  role="button"
+                  tabIndex={0}
+                  onClick={() => scrollToSection("pricing")}
+                  onKeyDown={(e) => {
+                    if (e.key === "Enter" || e.key === " ") {
+                      e.preventDefault()
+                      scrollToSection("pricing")
+                    }
+                  }}
                   className={`bg-card/90 backdrop-blur-sm p-4 text-center hover:scale-105 transition-transform cursor-pointer
                     ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
                   style={{ transitionDelay: `${index * 100}ms` }}

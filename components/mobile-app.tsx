@@ -1,5 +1,6 @@
 import Image from "next/image"
 import { Check } from "lucide-react"
+import { whatsappWithText } from "@/lib/site"
 
 const features = [
   "Быстрый заказ",
@@ -9,7 +10,7 @@ const features = [
 
 export function MobileApp() {
   return (
-    <section className="py-16 md:py-24 bg-secondary">
+    <section id="app" className="scroll-mt-28 md:scroll-mt-32 py-16 md:py-24 bg-secondary">
       <div className="max-w-[1400px] mx-auto px-4">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           {/* Content */}
@@ -41,7 +42,9 @@ export function MobileApp() {
             {/* App Store Buttons */}
             <div className="flex gap-4">
               <a 
-                href="#" 
+                href={whatsappWithText("Здравствуйте! Пришлите ссылку на приложение в App Store.")}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-block bg-foreground text-background px-6 py-3 hover:opacity-90 transition-opacity"
               >
                 <div className="flex items-center gap-3">
@@ -55,7 +58,9 @@ export function MobileApp() {
                 </div>
               </a>
               <a 
-                href="#" 
+                href={whatsappWithText("Здравствуйте! Пришлите ссылку на приложение в Google Play.")}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-block bg-foreground text-background px-6 py-3 hover:opacity-90 transition-opacity"
               >
                 <div className="flex items-center gap-3">

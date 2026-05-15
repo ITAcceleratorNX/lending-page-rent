@@ -2,6 +2,7 @@
 
 import { ArrowRight } from "lucide-react"
 import Image from "next/image"
+import { whatsappWithText } from "@/lib/site"
 
 const categories = [
   { 
@@ -68,7 +69,7 @@ const categories = [
 
 export function Categories() {
   return (
-    <section className="py-16 md:py-24 bg-background">
+    <section id="catalog" className="scroll-mt-28 md:scroll-mt-32 py-16 md:py-24 bg-background">
       <div className="max-w-[1400px] mx-auto px-4">
         <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-light tracking-wide mb-4">
           GO RENT ПРЕДЛАГАЕТ ДЕКОР В АРЕНДУ
@@ -79,7 +80,9 @@ export function Categories() {
           {categories.map((category, index) => (
             <a
               key={category.key}
-              href={`/catalog/${category.key}`}
+              href={whatsappWithText(`Здравствуйте! Интересует аренда: ${category.name}`)}
+              target="_blank"
+              rel="noopener noreferrer"
               className="group block border border-border bg-card hover:border-accent transition-all duration-300"
               style={{ animationDelay: `${index * 50}ms` }}
             >
@@ -102,7 +105,9 @@ export function Categories() {
         
         <div className="flex justify-center mt-12">
           <a 
-            href="/catalog"
+            href={whatsappWithText("Здравствуйте! Хочу арендовать декор, нужна консультация по каталогу.")}
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-flex items-center gap-3 bg-accent text-accent-foreground px-8 py-4 uppercase text-sm tracking-luxury hover:bg-accent/90 transition-colors"
           >
             <span>Перейти в каталог</span>
