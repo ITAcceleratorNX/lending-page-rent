@@ -6,7 +6,7 @@ const products = [
   { name: "Винный бокал Evans", price: 1200, image: "https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?w=200&h=200&fit=crop" },
   { name: "Подставная тарелка Gold Rim", price: 900, image: "https://images.unsplash.com/photo-1579541814924-49fef17c5be5?w=200&h=200&fit=crop" },
   { name: "Стул Кьявари Gold", price: 4500, image: "https://images.unsplash.com/photo-1503602642458-232111445657?w=200&h=200&fit=crop" },
-  { name: "Серпантин-стол (6м)", price: 85000, image: "https://images.unsplash.com/photo-1617806118233-18e1de247200?w=200&h=200&fit=crop" },
+  { name: "Серпантин-стол (6 м)", price: 85000, image: "https://images.unsplash.com/photo-1617806118233-18e1de247200?w=200&h=200&fit=crop" },
   { name: "Скатерть Premium", price: 3500, image: "https://images.unsplash.com/photo-1505932794465-147d1f1b2c97?w=200&h=200&fit=crop" },
   { name: "Хайбол Evans", price: 800, image: "https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?w=200&h=200&fit=crop" },
 ]

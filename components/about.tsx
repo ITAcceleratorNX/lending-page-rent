@@ -65,7 +65,7 @@ export function About() {
           <div className="space-y-8">
             <div>
               <p className="text-lg md:text-xl leading-relaxed text-muted-foreground mb-6">
-                Сейчас у Go Rent 4 филиала, и мы являемся лидером среди премиум арендных компаний в Казахстане.
+                Сейчас у Go Rent 4 филиала, и мы являемся лидером среди премиальных арендных компаний в Казахстане.
               </p>
               <p className="text-muted-foreground leading-relaxed">
                 Наши товары соответствуют тенденциям event-дизайна и помогают вам создавать собственные 

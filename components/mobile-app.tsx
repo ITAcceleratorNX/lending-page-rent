@@ -4,7 +4,7 @@ import { Check } from "lucide-react"
 const features = [
   "Быстрый заказ",
   "Пуш-уведомления",
-  "Трекинг заказа",
+  "Отслеживание заказа",
 ]
 
 export function MobileApp() {

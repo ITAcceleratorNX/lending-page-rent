@@ -62,8 +62,8 @@ export function Header() {
               </svg>
             </div>
             <div className="ml-1 flex flex-col leading-none">
-              <span className="text-accent font-light text-xs tracking-[0.3em]">GO</span>
               <span className="text-accent font-light text-xs tracking-[0.3em]">RENT</span>
+              <span className="text-accent font-light text-xs tracking-[0.3em]">ME</span>
             </div>
           </div>
         </a>

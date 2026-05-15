@@ -28,8 +28,8 @@ export function Footer() {
                 </svg>
               </div>
               <div className="ml-2 flex flex-col leading-none">
-                <span className="text-accent font-light text-sm tracking-[0.3em]">GO</span>
                 <span className="text-accent font-light text-sm tracking-[0.3em]">RENT</span>
+                <span className="text-accent font-light text-sm tracking-[0.3em]">ME</span>
               </div>
             </div>
             
@@ -54,7 +54,7 @@ export function Footer() {
               <div className="flex items-start gap-3">
                 <MapPin className="w-5 h-5 text-accent shrink-0 mt-0.5" />
                 <div className="text-sm text-muted-foreground">
-                  <p>Алматы - Алмалинский район</p>
+                  <p>Алматы — Алмалинский район</p>
                   <p>ул. Жибек Жолы 1 - 17 10D</p>
                   <p>Блок D, Склад S01</p>
                   <p className="mt-2">Каждый день с 10:00 до 18:00</p>

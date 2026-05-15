@@ -12,8 +12,8 @@ const heroSlides = [
     products: [
       { name: "Винный бокал", image: "/placeholder.svg?height=150&width=100" },
       { name: "Хайбол", image: "/placeholder.svg?height=150&width=100" },
-      { name: "Флейта", image: "/placeholder.svg?height=150&width=100" },
-      { name: "Коктейльный", image: "/placeholder.svg?height=150&width=100" },
+      { name: "Флюте", image: "/placeholder.svg?height=150&width=100" },
+      { name: "Коктейльный бокал", image: "/placeholder.svg?height=150&width=100" },
     ]
   },
 ]
