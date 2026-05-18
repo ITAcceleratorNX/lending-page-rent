@@ -33,7 +33,7 @@ export function Categories() {
                   src={category.image}
                   alt={categoryAlt(category.name)}
                   fill
-                  quality={70}
+                  quality={88}
                   sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, (max-width: 1400px) 33vw, 320px"
                   className="object-cover transition-transform duration-500 group-hover:scale-[1.04]"
                   loading="lazy"

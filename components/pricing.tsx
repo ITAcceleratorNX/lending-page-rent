@@ -65,7 +65,7 @@ export function Pricing() {
                   src={product.image}
                   alt={`${product.name} — Rent Me Алматы`}
                   fill
-                  quality={68}
+                  quality={80}
                   className="object-cover group-hover:scale-105 transition-transform duration-500"
                   sizes="(max-width: 768px) 45vw, (max-width: 1024px) 30vw, 220px"
                   loading="lazy"

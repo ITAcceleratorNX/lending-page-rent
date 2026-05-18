@@ -37,7 +37,7 @@ export function Gallery() {
               src={active.src}
               alt={active.alt}
               fill
-              quality={72}
+              quality={85}
               className="object-cover group-hover:scale-[1.02] transition-transform duration-700"
               sizes="(max-width: 1400px) calc(100vw - 32px), 1340px"
               loading="lazy"

@@ -32,7 +32,7 @@ export function About() {
                   src={item.image}
                   alt={item.title}
                   fill
-                  quality={72}
+                  quality={85}
                   className="object-cover"
                   sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 336px"
                   loading="lazy"

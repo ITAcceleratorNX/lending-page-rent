@@ -10,7 +10,7 @@ export function Achievements() {
           src={HERO_MAIN_BANNER}
           alt="Премиальное оформление мероприятия — Rent Me"
           fill
-          quality={68}
+          quality={82}
           className="object-cover"
           sizes="100vw"
           loading="lazy"
