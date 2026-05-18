@@ -19,21 +19,26 @@ export function Header() {
   return (
     <header className="bg-background sticky top-0 z-50 border-b border-border/60">
       <div className="max-w-[1400px] mx-auto px-4 py-3 md:py-4 flex items-center justify-between gap-4">
-        <a href="#top" className="flex items-center gap-3 min-w-0 shrink-0">
+        <a href="#top" className="flex items-center gap-2 sm:gap-3 min-w-0 shrink-0" aria-label="Rent Me — на главную">
           <Image
             src={SITE_FAVICON}
-            alt="Rent Me"
+            alt=""
             width={56}
             height={56}
             className="h-12 w-12 md:h-14 md:w-14 object-contain shrink-0"
             priority
           />
-          <span className="hidden sm:block text-[10px] uppercase tracking-[0.15em] text-muted-foreground border-l border-border pl-3 leading-tight">
-            {SITE_CITY}
-            <span className="block text-[11px] normal-case tracking-normal font-sans opacity-90 mt-0.5">
-              {SITE_COMPANY_LEGAL}
+          <div className="flex flex-col min-w-0 leading-tight">
+            <span className="font-serif text-lg sm:text-xl md:text-2xl font-light tracking-wide text-accent">
+              Rent Me
             </span>
-          </span>
+            <span className="hidden sm:block text-[10px] uppercase tracking-[0.15em] text-muted-foreground mt-1.5 leading-tight">
+              {SITE_CITY}
+              <span className="block text-[11px] normal-case tracking-normal font-sans opacity-90 mt-0.5">
+                {SITE_COMPANY_LEGAL}
+              </span>
+            </span>
+          </div>
         </a>
 
         <nav className="hidden lg:flex items-center gap-10 text-sm uppercase tracking-luxury text-muted-foreground">

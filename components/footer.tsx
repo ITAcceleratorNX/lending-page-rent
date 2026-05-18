@@ -17,14 +17,21 @@ export function Footer() {
       <div className="max-w-[1400px] mx-auto px-4">
         <div className="grid md:grid-cols-2 gap-12 lg:gap-20">
           <div className="space-y-6">
-            <a href="#top" className="flex items-center gap-3 w-fit hover:opacity-90 transition-opacity">
+            <a
+              href="#top"
+              className="flex items-center gap-3 w-fit hover:opacity-90 transition-opacity"
+              aria-label="Rent Me — на главную"
+            >
               <Image
                 src={SITE_FAVICON}
-                alt="Rent Me"
+                alt=""
                 width={72}
                 height={72}
                 className="h-14 w-14 md:h-16 md:w-16 object-contain shrink-0"
               />
+              <span className="font-serif text-2xl md:text-3xl font-light tracking-wide text-accent">
+                Rent Me
+              </span>
             </a>
             <p className="text-muted-foreground leading-relaxed max-w-md">
               Rent Me — аренда мебели и декора для мероприятий
