@@ -65,8 +65,11 @@ export function Pricing() {
                   src={product.image}
                   alt={`${product.name} — Rent Me Алматы`}
                   fill
+                  quality={68}
                   className="object-cover group-hover:scale-105 transition-transform duration-500"
-                  sizes="(max-width: 768px) 50vw, 16vw"
+                  sizes="(max-width: 768px) 45vw, (max-width: 1024px) 30vw, 220px"
+                  loading="lazy"
+                  decoding="async"
                 />
               </div>
               <div className="p-4">

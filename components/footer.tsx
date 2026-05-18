@@ -27,7 +27,11 @@ export function Footer() {
                 alt=""
                 width={72}
                 height={72}
+                sizes="(max-width: 768px) 56px, 64px"
+                quality={85}
                 className="h-14 w-14 md:h-16 md:w-16 object-contain shrink-0"
+                loading="lazy"
+                decoding="async"
               />
               <span className="font-serif text-2xl md:text-3xl font-light tracking-wide text-accent">
                 Rent Me

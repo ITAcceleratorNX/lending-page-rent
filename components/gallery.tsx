@@ -37,9 +37,11 @@ export function Gallery() {
               src={active.src}
               alt={active.alt}
               fill
+              quality={72}
               className="object-cover group-hover:scale-[1.02] transition-transform duration-700"
-              sizes="100vw"
-              priority={currentIndex === 0}
+              sizes="(max-width: 1400px) calc(100vw - 32px), 1340px"
+              loading="lazy"
+              decoding="async"
             />
           </div>
 

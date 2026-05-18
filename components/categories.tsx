@@ -33,8 +33,11 @@ export function Categories() {
                   src={category.image}
                   alt={categoryAlt(category.name)}
                   fill
-                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                  quality={70}
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, (max-width: 1400px) 33vw, 320px"
                   className="object-cover transition-transform duration-500 group-hover:scale-[1.04]"
+                  loading="lazy"
+                  decoding="async"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-primary/92 via-primary/25 to-transparent" />
                 <div className="absolute bottom-0 left-0 right-0 p-4 md:p-5">

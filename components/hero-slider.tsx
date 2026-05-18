@@ -27,7 +27,9 @@ export function HeroSlider() {
               fill
               className="object-cover object-center"
               priority
-              sizes="100vw"
+              fetchPriority="high"
+              quality={72}
+              sizes="(max-width: 1536px) 100vw, 1420px"
             />
           </div>
 

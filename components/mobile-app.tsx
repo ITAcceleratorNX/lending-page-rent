@@ -38,8 +38,11 @@ export function MobileApp() {
               src={APP_MOCKUP_CONCEPT}
               alt="Концепт мобильного приложения Rent Me — продукт в разработке"
               fill
+              quality={74}
               className="object-contain object-center p-4 md:p-6"
-              sizes="(max-width: 768px) 100vw, 50vw"
+              sizes="(max-width: 768px) 100vw, 640px"
+              loading="lazy"
+              decoding="async"
             />
           </div>
         </div>

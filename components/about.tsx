@@ -32,8 +32,11 @@ export function About() {
                   src={item.image}
                   alt={item.title}
                   fill
+                  quality={72}
                   className="object-cover"
-                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 336px"
+                  loading="lazy"
+                  decoding="async"
                 />
               </div>
               <div className="p-5 flex flex-col flex-1">
