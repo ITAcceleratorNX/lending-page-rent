@@ -1,107 +1,98 @@
 "use client"
 
-import { useState } from "react"
 import Image from "next/image"
-import { ArrowRight, ChevronRight } from "lucide-react"
+import { ArrowRight, Headphones, LayoutGrid, MessageCircle, PackageSearch } from "lucide-react"
+import { whatsappUrl, SITE_COMPANY_LEGAL, SITE_CITY } from "@/lib/site"
 
-const services = [
+const pillars = [
   {
-    title: "Оформите заказ",
-    description: "Заказывайте и оплачивайте онлайн 24/7"
+    title: "Удобный заказ",
+    text: "Заявка и уточнения в WhatsApp — один номер, без лишних звонков и форм.",
+    icon: MessageCircle,
   },
   {
-    title: "Полный сервис",
-    description: "Аренда + доставка + установка"
+    title: "Помощь в подборе",
+    text: "Подскажем сочетания мебели, декора и сервировки под вашу площадку и сценарий.",
+    icon: PackageSearch,
   },
   {
-    title: "Поддержка клиентов",
-    description: "Консультация и поддержка"
+    title: "Широкий ассортимент",
+    text: "Мебель, текстиль, посуда, стекло и декор — от единичных позиций до комплектов.",
+    icon: LayoutGrid,
   },
   {
-    title: "10% скидка",
-    description: "Для event-профессионалов"
+    title: "Сервис и сопровождение",
+    text: "Логистика и работа на площадке — по объёму заказа и по договорённости.",
+    icon: Headphones,
   },
-  {
-    title: "Эко-подход",
-    description: "Экологичный и устойчивый подход к упаковке"
-  },
-]
+] as const
 
 export function About() {
-  const [openIndex, setOpenIndex] = useState<number | null>(null)
-
   return (
     <section id="about" className="scroll-mt-28 md:scroll-mt-32 py-16 md:py-24 bg-background">
       <div className="max-w-[1400px] mx-auto px-4">
-        <span className="text-xs uppercase tracking-luxury text-muted-foreground mb-8 block">
-          О нас и нашем сервисе
-        </span>
-        
-        <div className="grid md:grid-cols-2 gap-12 lg:gap-24">
-          {/* Left Column - Founder Image */}
-          <div className="space-y-8">
-            <div className="relative h-[400px] md:h-[500px] overflow-hidden">
+        <p className="text-xs uppercase tracking-luxury text-muted-foreground mb-3">
+          Сервис и преимущества
+        </p>
+        <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-light tracking-wide mb-6">
+          Почему выбирают Rent Me
+        </h2>
+
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
+          <div className="space-y-6">
+            <div className="relative h-[380px] md:h-[480px] overflow-hidden border border-border bg-card">
               <Image
-                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-5hfnabiIz7xG7pTVKdsA8XnrqYgPTO.png"
-                alt="Основатель Go Rent"
+                src="https://images.unsplash.com/photo-1478146896981-b80fe463b330?w=1000&h=1200&fit=crop&q=85"
+                alt="Сервировка и декор для мероприятия, Rent Me"
                 fill
-                className="object-cover object-top"
+                className="object-cover object-center"
+                sizes="(max-width: 1024px) 100vw, 50vw"
               />
             </div>
-            
-            <div className="space-y-4 text-muted-foreground leading-relaxed">
+            <div className="space-y-4 text-muted-foreground leading-relaxed text-sm md:text-base">
               <p>
-                Go Rent был основан в 2015 году известным свадебным фотографом Лилией Горлановой, 
-                которая также основала свадебное агентство Gorlanova Event.
+                <strong className="text-foreground font-medium">Rent Me</strong> — каталог аренды
+                мебели, декора, сервировки и текстиля для мероприятий в {SITE_CITY}. Для тех, кому
+                нужен цельный образ площадки без покупки и хранения инвентаря.
               </p>
               <p>
-                Опираясь на этот обширный опыт, Лилия и её команда сосредоточены на премиальных 
-                мероприятиях, обеспечивая клиентам Go Rent исключительно удобный сервис аренды.
+                Оператор каталога —{" "}
+                <strong className="text-foreground font-medium">{SITE_COMPANY_LEGAL}</strong>.
+                Работаем с частными и корпоративными событиями: от камерных ужинов до банкетов.
               </p>
             </div>
           </div>
-          
-          {/* Right Column - Company Info */}
-          <div className="space-y-8">
-            <div>
-              <p className="text-lg md:text-xl leading-relaxed text-muted-foreground mb-6">
-                Сейчас у Go Rent 4 филиала, и мы являемся лидером среди премиальных арендных компаний в Казахстане.
-              </p>
-              <p className="text-muted-foreground leading-relaxed">
-                Наши товары соответствуют тенденциям event-дизайна и помогают вам создавать собственные 
-                наборы или выбирать из готовых, созданных нашей командой. Наш обширный выбор помогает 
-                экономить деньги и создавать новые наборы для мероприятий любого размера: от небольших 
-                частных вечеринок до грандиозных свадеб и гала-ужинов.
-              </p>
-            </div>
-            
-            {/* Services Accordion */}
-            <div className="space-y-0 border-t border-border scroll-mt-28 md:scroll-mt-32" id="services">
-              {services.map((service, index) => (
-                <div key={index} className="border-b border-border">
-                  <button
-                    onClick={() => setOpenIndex(openIndex === index ? null : index)}
-                    className="w-full py-4 flex items-center justify-between text-left hover:text-accent transition-colors"
-                  >
-                    <div className="flex items-baseline gap-4">
-                      <span className="text-sm uppercase tracking-luxury font-medium">
-                        {service.title}:
-                      </span>
-                      <span className="text-sm text-muted-foreground">
-                        {service.description}
-                      </span>
-                    </div>
-                    <ChevronRight className={`w-4 h-4 transition-transform ${openIndex === index ? 'rotate-90' : ''}`} />
-                  </button>
+
+          <div id="services" className="scroll-mt-28 md:scroll-mt-32 space-y-10">
+            <p className="text-lg md:text-xl leading-relaxed text-muted-foreground">
+              Соберём комплектацию под бюджет и стиль: актуальные позиции и расчёт — в переписке
+              WhatsApp.
+            </p>
+
+            <div className="grid sm:grid-cols-2 gap-4">
+              {pillars.map(({ title, text, icon: Icon }) => (
+                <div
+                  key={title}
+                  className="border border-border bg-card p-5 md:p-6 flex flex-col gap-3 hover:border-accent/80 transition-colors"
+                >
+                  <Icon className="w-6 h-6 text-accent shrink-0" strokeWidth={1.5} />
+                  <div>
+                    <h3 className="text-sm uppercase tracking-luxury font-medium text-foreground mb-2">
+                      {title}
+                    </h3>
+                    <p className="text-sm text-muted-foreground leading-relaxed">{text}</p>
+                  </div>
                 </div>
               ))}
             </div>
-            
-            <a 
-              href="#services"
+
+            <a
+              href={whatsappUrl()}
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center gap-3 border border-border px-6 py-3 text-sm uppercase tracking-luxury hover:border-accent hover:text-accent transition-colors"
             >
-              <span>Все услуги</span>
+              <span>Обсудить в WhatsApp</span>
               <ArrowRight className="w-4 h-4" />
             </a>
           </div>

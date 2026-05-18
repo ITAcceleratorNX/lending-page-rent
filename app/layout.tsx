@@ -16,8 +16,29 @@ const manrope = Manrope({
 })
 
 export const metadata: Metadata = {
-  title: 'Go Rent | Премиум-аренда декора для мероприятий в Алматы',
-  description: 'Аренда посуды, мебели и декора для свадеб, гала-ужинов и корпоративных мероприятий. Более 14 000 успешных проектов.',
+  title: "Rent Me | Аренда мебели, декора и сервировки для мероприятий в Алматы",
+  description:
+    "Rent Me — каталог аренды мебели, декора, сервировки, текстиля и решений для событий в Алматы. Оператор каталога: TMK Limited. WhatsApp: +7 747 907 16 22.",
+  keywords: [
+    "Rent Me",
+    "TMK Limited",
+    "аренда мебели Алматы",
+    "аренда декора мероприятие",
+    "сервировка в аренду",
+    "каталог аренды мебели",
+    "Алматы",
+  ],
+  openGraph: {
+    siteName: "Rent Me",
+    title: "Rent Me — аренда для мероприятий в Алматы",
+    description:
+      "Мебель, декор, сервировка, текстиль и комплекты для событий. TMK Limited. Консультация в WhatsApp.",
+    locale: "ru_KZ",
+    type: "website",
+  },
+  icons: {
+    icon: [{ url: "/icon.svg", type: "image/svg+xml" }],
+  },
 }
 
 export default function RootLayout({

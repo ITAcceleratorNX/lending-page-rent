@@ -4,7 +4,7 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  /* Go Rent Premium Color Palette */
+  /* Rent Me palette */
   --background: #F5F1EB;
   --foreground: #1A1A1A;
   --card: #FFFFFF;
@@ -65,7 +65,7 @@
   }
 }
 
-/* Custom utility classes for Go Rent */
+/* Custom utility classes */
 .tracking-luxury {
   letter-spacing: 0.15em;
 }

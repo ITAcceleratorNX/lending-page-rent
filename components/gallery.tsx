@@ -3,19 +3,20 @@
 import { useState } from "react"
 import Image from "next/image"
 import { ChevronLeft, ChevronRight } from "lucide-react"
+import { whatsappUrl } from "@/lib/site"
 
 const galleryImages = [
   {
-    src: "https://images.unsplash.com/photo-1519671482749-fd09be7ccebf?w=800&h=600&fit=crop",
-    alt: "Элегантная вечерняя сервировка"
+    src: "https://images.unsplash.com/photo-1519671482749-fd09be7ccebf?w=1200&h=800&fit=crop&q=85",
+    alt: "Вечерняя сервировка для мероприятия",
   },
   {
-    src: "https://images.unsplash.com/photo-1478146896981-b80fe463b330?w=800&h=600&fit=crop",
-    alt: "Яркая сервировка с красными акцентами"
+    src: "https://images.unsplash.com/photo-1478146896981-b80fe463b330?w=1200&h=800&fit=crop&q=85",
+    alt: "Декор и сервировка стола",
   },
   {
-    src: "https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?w=800&h=600&fit=crop",
-    alt: "Классическая белая сервировка"
+    src: "https://images.unsplash.com/photo-1528605248644-14ddedd08fd7?w=1200&h=800&fit=crop&q=85",
+    alt: "Зал и фуршетная зона для события",
   },
 ]
 
@@ -30,65 +31,77 @@ export function Gallery() {
     setCurrentIndex((prev) => (prev - 1 + galleryImages.length) % galleryImages.length)
   }
 
+  const active = galleryImages[currentIndex]
+
   return (
     <section id="gallery" className="scroll-mt-28 md:scroll-mt-32 py-16 md:py-24 bg-background">
       <div className="max-w-[1400px] mx-auto px-4">
         <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-light tracking-wide mb-2">
-          СОЗДАЙТЕ УНИКАЛЬНУЮ СЕРВИРОВКУ
+          ВДОХНОВЕНИЕ ДЛЯ ВАШЕГО МЕРОПРИЯТИЯ
         </h2>
         <p className="text-lg md:text-xl text-muted-foreground uppercase tracking-luxury mb-8">
-          для вашего мероприятия с нашими товарами
+          Rent Me · мебель, декор, сервировка и текстиль
         </p>
-        
+
         <div className="mb-8">
           <span className="text-xs uppercase tracking-luxury text-muted-foreground">
-            Готовые решения
+            Готовые решения и референсы
           </span>
         </div>
-        
+
         <div className="relative">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            {galleryImages.map((image, index) => (
-              <div 
-                key={index}
-                className="relative h-[300px] md:h-[450px] overflow-hidden group"
-              >
-                <Image
-                  src={image.src}
-                  alt={image.alt}
-                  fill
-                  className="object-cover group-hover:scale-105 transition-transform duration-700"
-                />
-              </div>
-            ))}
+          <div className="relative h-[320px] md:h-[520px] overflow-hidden group">
+            <Image
+              src={active.src}
+              alt={active.alt}
+              fill
+              className="object-cover group-hover:scale-[1.02] transition-transform duration-700"
+              sizes="100vw"
+              priority={currentIndex === 0}
+            />
           </div>
-          
-          {/* Navigation */}
-          <button 
+
+          <button
+            type="button"
             onClick={prevSlide}
-            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 bg-card p-2 shadow-sm hover:bg-accent hover:text-accent-foreground transition-colors z-10"
+            className="absolute left-2 md:left-4 top-1/2 -translate-y-1/2 bg-card/95 p-2 shadow-sm hover:bg-accent hover:text-accent-foreground transition-colors z-10"
+            aria-label="Предыдущее фото"
           >
             <ChevronLeft className="w-6 h-6" />
           </button>
-          <button 
+          <button
+            type="button"
             onClick={nextSlide}
-            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 bg-card p-2 shadow-sm hover:bg-accent hover:text-accent-foreground transition-colors z-10"
+            className="absolute right-2 md:right-4 top-1/2 -translate-y-1/2 bg-card/95 p-2 shadow-sm hover:bg-accent hover:text-accent-foreground transition-colors z-10"
+            aria-label="Следующее фото"
           >
             <ChevronRight className="w-6 h-6" />
           </button>
         </div>
-        
-        {/* Pagination Dots */}
+
         <div className="flex justify-center gap-2 mt-8">
           {galleryImages.map((_, i) => (
             <button
               key={i}
+              type="button"
               onClick={() => setCurrentIndex(i)}
               className={`w-2 h-2 rounded-full transition-colors ${
-                i === currentIndex ? 'bg-accent' : 'bg-border'
+                i === currentIndex ? "bg-accent" : "bg-border"
               }`}
+              aria-label={`Слайд ${i + 1}`}
             />
           ))}
+        </div>
+
+        <div className="flex justify-center mt-10">
+          <a
+            href={whatsappUrl()}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center justify-center border border-border px-8 py-3.5 uppercase text-sm tracking-luxury hover:border-accent hover:text-accent transition-colors"
+          >
+            Запросить подбор в WhatsApp
+          </a>
         </div>
       </div>
     </section>
