@@ -1,43 +1,53 @@
-import type { Metadata } from 'next'
-import { Cormorant_Garamond, Manrope } from 'next/font/google'
-import { Analytics } from '@vercel/analytics/next'
-import './globals.css'
+import type { Metadata } from "next"
+import { Cormorant_Garamond, Manrope } from "next/font/google"
+import { Analytics } from "@vercel/analytics/next"
+import "./globals.css"
 
-const cormorant = Cormorant_Garamond({ 
+const cormorant = Cormorant_Garamond({
   subsets: ["latin", "cyrillic"],
-  weight: ['300', '400', '500', '600', '700'],
-  variable: '--font-serif'
+  weight: ["300", "400", "500", "600", "700"],
+  variable: "--font-serif",
 })
 
-const manrope = Manrope({ 
+const manrope = Manrope({
   subsets: ["latin", "cyrillic"],
-  weight: ['300', '400', '500', '600'],
-  variable: '--font-sans'
+  weight: ["300", "400", "500", "600"],
+  variable: "--font-sans",
 })
+
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL
 
 export const metadata: Metadata = {
-  title: "Rent Me | Аренда мебели, декора и сервировки для мероприятий в Алматы",
+  ...(siteUrl ? { metadataBase: new URL(siteUrl) } : {}),
+  title: "Rent Me — Аренда мебели и декора для мероприятий в Алматы",
   description:
-    "Rent Me — каталог аренды мебели, декора, сервировки, текстиля и решений для событий в Алматы. Оператор каталога: TMK Limited. WhatsApp: +7 747 907 16 22.",
+    "Rent Me — аренда премиум-мебели, декора, сервировки и текстиля для свадеб, банкетов и корпоративных мероприятий в Алматы. Заказ через WhatsApp.",
   keywords: [
     "Rent Me",
     "TMK Limited",
     "аренда мебели Алматы",
     "аренда декора мероприятие",
     "сервировка в аренду",
-    "каталог аренды мебели",
     "Алматы",
+    "+7 747 907 16 22",
   ],
+  icons: {
+    icon: [{ url: "/images/favicon.png", type: "image/png" }],
+  },
   openGraph: {
     siteName: "Rent Me",
-    title: "Rent Me — аренда для мероприятий в Алматы",
-    description:
-      "Мебель, декор, сервировка, текстиль и комплекты для событий. TMK Limited. Консультация в WhatsApp.",
+    title: "Rent Me — Аренда мебели и декора в Алматы",
+    description: "Премиум-аренда мебели, декора и сервировки для мероприятий.",
     locale: "ru_KZ",
     type: "website",
-  },
-  icons: {
-    icon: [{ url: "/icon.svg", type: "image/svg+xml" }],
+    images: [
+      {
+        url: "/images/hero/hero-main-banner.png",
+        width: 1200,
+        height: 630,
+        alt: "Аренда мебели и декора для мероприятий — Rent Me Алматы",
+      },
+    ],
   },
 }
 
@@ -50,7 +60,7 @@ export default function RootLayout({
     <html lang="ru" className={`${cormorant.variable} ${manrope.variable} bg-background`}>
       <body className="font-sans antialiased">
         {children}
-        {process.env.NODE_ENV === 'production' && <Analytics />}
+        {process.env.NODE_ENV === "production" && <Analytics />}
       </body>
     </html>
   )

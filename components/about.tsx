@@ -1,101 +1,57 @@
 "use client"
 
 import Image from "next/image"
-import { ArrowRight, Headphones, LayoutGrid, MessageCircle, PackageSearch } from "lucide-react"
-import { whatsappUrl, SITE_COMPANY_LEGAL, SITE_CITY } from "@/lib/site"
-
-const pillars = [
-  {
-    title: "Удобный заказ",
-    text: "Заявка и уточнения в WhatsApp — один номер, без лишних звонков и форм.",
-    icon: MessageCircle,
-  },
-  {
-    title: "Помощь в подборе",
-    text: "Подскажем сочетания мебели, декора и сервировки под вашу площадку и сценарий.",
-    icon: PackageSearch,
-  },
-  {
-    title: "Широкий ассортимент",
-    text: "Мебель, текстиль, посуда, стекло и декор — от единичных позиций до комплектов.",
-    icon: LayoutGrid,
-  },
-  {
-    title: "Сервис и сопровождение",
-    text: "Логистика и работа на площадке — по объёму заказа и по договорённости.",
-    icon: Headphones,
-  },
-] as const
+import { FEATURES } from "@/lib/media"
+import { whatsappUrl } from "@/lib/site"
 
 export function About() {
   return (
-    <section id="about" className="scroll-mt-28 md:scroll-mt-32 py-16 md:py-24 bg-background">
+    <section
+      id="about"
+      className="scroll-mt-20 md:scroll-mt-24 py-16 md:py-24 bg-background border-y border-border/60"
+    >
       <div className="max-w-[1400px] mx-auto px-4">
         <p className="text-xs uppercase tracking-luxury text-muted-foreground mb-3">
-          Сервис и преимущества
+          Сервис и доверие
         </p>
-        <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-light tracking-wide mb-6">
-          Почему выбирают Rent Me
+        <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-light tracking-wide mb-10 md:mb-14">
+          Удобство и сопровождение
         </h2>
 
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
-          <div className="space-y-6">
-            <div className="relative h-[380px] md:h-[480px] overflow-hidden border border-border bg-card">
-              <Image
-                src="https://images.unsplash.com/photo-1478146896981-b80fe463b330?w=1000&h=1200&fit=crop&q=85"
-                alt="Сервировка и декор для мероприятия, Rent Me"
-                fill
-                className="object-cover object-center"
-                sizes="(max-width: 1024px) 100vw, 50vw"
-              />
-            </div>
-            <div className="space-y-4 text-muted-foreground leading-relaxed text-sm md:text-base">
-              <p>
-                <strong className="text-foreground font-medium">Rent Me</strong> — каталог аренды
-                мебели, декора, сервировки и текстиля для мероприятий в {SITE_CITY}. Для тех, кому
-                нужен цельный образ площадки без покупки и хранения инвентаря.
-              </p>
-              <p>
-                Оператор каталога —{" "}
-                <strong className="text-foreground font-medium">{SITE_COMPANY_LEGAL}</strong>.
-                Работаем с частными и корпоративными событиями: от камерных ужинов до банкетов.
-              </p>
-            </div>
-          </div>
-
-          <div id="services" className="scroll-mt-28 md:scroll-mt-32 space-y-10">
-            <p className="text-lg md:text-xl leading-relaxed text-muted-foreground">
-              Соберём комплектацию под бюджет и стиль: актуальные позиции и расчёт — в переписке
-              WhatsApp.
-            </p>
-
-            <div className="grid sm:grid-cols-2 gap-4">
-              {pillars.map(({ title, text, icon: Icon }) => (
-                <div
-                  key={title}
-                  className="border border-border bg-card p-5 md:p-6 flex flex-col gap-3 hover:border-accent/80 transition-colors"
-                >
-                  <Icon className="w-6 h-6 text-accent shrink-0" strokeWidth={1.5} />
-                  <div>
-                    <h3 className="text-sm uppercase tracking-luxury font-medium text-foreground mb-2">
-                      {title}
-                    </h3>
-                    <p className="text-sm text-muted-foreground leading-relaxed">{text}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-
-            <a
-              href={whatsappUrl()}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-3 border border-border px-6 py-3 text-sm uppercase tracking-luxury hover:border-accent hover:text-accent transition-colors"
+        <div
+          id="services"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 scroll-mt-20 md:scroll-mt-24"
+        >
+          {FEATURES.map((item) => (
+            <article
+              key={item.title}
+              className="flex flex-col border border-border bg-card shadow-sm hover:border-accent/70 transition-colors overflow-hidden"
             >
-              <span>Обсудить в WhatsApp</span>
-              <ArrowRight className="w-4 h-4" />
-            </a>
-          </div>
+              <div className="relative aspect-[4/3] w-full border-b border-border/80 bg-muted/30">
+                <Image
+                  src={item.image}
+                  alt={item.title}
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                />
+              </div>
+              <div className="p-5 flex flex-col flex-1">
+                <h3 className="font-serif text-xl font-light text-foreground tracking-wide mb-3">
+                  {item.title}
+                </h3>
+                <p className="text-sm text-muted-foreground leading-relaxed flex-1">{item.text}</p>
+                <a
+                  href={whatsappUrl()}
+                  target="_blank"
+                  rel="noopener"
+                  className="mt-5 text-xs uppercase tracking-luxury text-accent hover:underline w-fit"
+                >
+                  WhatsApp
+                </a>
+              </div>
+            </article>
+          ))}
         </div>
       </div>
     </section>

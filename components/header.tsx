@@ -1,146 +1,94 @@
 "use client"
 
-import { MapPin, Phone, ShoppingBag, User, Menu, ChevronDown, Search, MessageCircle } from "lucide-react"
+import Image from "next/image"
+import { Menu, X } from "lucide-react"
 import { useState } from "react"
-import { scrollToSection } from "@/lib/scroll-to-section"
-import { whatsappUrl, SITE_CITY, SITE_COMPANY_LEGAL, SITE_ADDRESS_LINE } from "@/lib/site"
+import { whatsappUrl, SITE_CITY, SITE_COMPANY_LEGAL } from "@/lib/site"
+import { SITE_FAVICON } from "@/lib/media"
 
-export function TopBar() {
-  return (
-    <div className="bg-background border-b border-border">
-      <div className="max-w-[1400px] mx-auto px-4 py-2 flex items-center justify-between">
-        <div className="flex items-center gap-4">
-          <button
-            type="button"
-            aria-label="Как добраться"
-            title={`${SITE_CITY}, ${SITE_ADDRESS_LINE}`}
-            onClick={() => scrollToSection("contacts")}
-            className="flex items-center gap-1 text-muted-foreground hover:text-foreground transition-colors"
-          >
-            <MapPin className="w-4 h-4" />
-          </button>
-          <a
-            href={whatsappUrl()}
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Написать в WhatsApp"
-            className="flex items-center gap-1 text-muted-foreground hover:text-foreground transition-colors"
-          >
-            <Phone className="w-4 h-4" />
-          </a>
-          <button
-            type="button"
-            onClick={() => scrollToSection("contacts")}
-            className="flex items-center gap-1.5 text-sm text-muted-foreground hover:text-foreground transition-colors"
-            title={`${SITE_ADDRESS_LINE}`}
-          >
-            <span>Алматы</span>
-            <ChevronDown className="w-3.5 h-3.5" />
-          </button>
-        </div>
-
-        <a
-          href={whatsappUrl()}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="flex items-center gap-2 text-sm tracking-luxury uppercase hover:text-accent transition-colors"
-        >
-          <MessageCircle className="w-4 h-4" />
-          <span className="hidden sm:inline">Свяжитесь с нами в WhatsApp</span>
-        </a>
-
-        <div className="flex items-center gap-4">
-          <a
-            href={whatsappUrl()}
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Примеры цен — написать в WhatsApp"
-            className="text-muted-foreground hover:text-foreground transition-colors"
-          >
-            <ShoppingBag className="w-5 h-5" />
-          </a>
-          <button
-            type="button"
-            aria-label="О компании"
-            onClick={() => scrollToSection("about")}
-            className="text-muted-foreground hover:text-foreground transition-colors"
-          >
-            <User className="w-5 h-5" />
-          </button>
-          <button
-            type="button"
-            aria-label="Каталог на главной"
-            onClick={() => scrollToSection("catalog")}
-            className="text-muted-foreground hover:text-foreground transition-colors"
-          >
-            <Menu className="w-5 h-5" />
-          </button>
-        </div>
-      </div>
-    </div>
-  )
-}
+const nav = [
+  { label: "Главная", href: "#top" },
+  { label: "Каталог", href: "#catalog" },
+  { label: "О нас", href: "#about" },
+  { label: "Контакты", href: "#contacts" },
+] as const
 
 export function Header() {
-  const [searchQuery, setSearchQuery] = useState("")
+  const [open, setOpen] = useState(false)
 
   return (
-    <header className="bg-background py-4 sticky top-0 z-50 border-b border-border/50">
-      <div className="max-w-[1400px] mx-auto px-4 flex items-center gap-6">
-        <a href="/" className="flex-shrink-0 flex items-center gap-0 min-w-0">
-          <div className="flex items-center shrink-0">
-            <div className="text-accent">
-              <svg width="48" height="40" viewBox="0 0 48 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <circle cx="16" cy="20" r="12" stroke="currentColor" strokeWidth="2" fill="none"/>
-                <circle cx="32" cy="20" r="12" stroke="currentColor" strokeWidth="2" fill="none"/>
-              </svg>
-            </div>
-            <div className="ml-1 flex flex-col leading-none">
-              <span className="text-accent font-light text-xs tracking-[0.3em]">RENT</span>
-              <span className="text-accent font-light text-xs tracking-[0.3em]">ME</span>
-            </div>
-          </div>
-          <div className="hidden sm:flex flex-col justify-center text-[9px] uppercase tracking-[0.2em] text-muted-foreground leading-tight ml-3 pl-3 border-l border-border max-w-[10rem]">
-            <span>{SITE_CITY}</span>
-            <span className="mt-1 opacity-80 normal-case tracking-normal text-[11px] font-sans">{SITE_COMPANY_LEGAL}</span>
-          </div>
-        </a>
-
-        <a
-          href={whatsappUrl()}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="flex items-center gap-2 bg-accent text-accent-foreground px-6 py-3 uppercase text-sm tracking-luxury hover:bg-accent/90 transition-colors"
-        >
-          <Menu className="w-4 h-4" />
-          <span>Каталог</span>
-        </a>
-
-        <div className="flex-1 relative">
-          <input
-            type="text"
-            placeholder="Я хочу арендовать..."
-            value={searchQuery}
-            onChange={(e) => setSearchQuery(e.target.value)}
-            onKeyDown={(e) => {
-              if (e.key === "Enter") {
-                e.preventDefault()
-                window.open(whatsappUrl(), "_blank", "noopener,noreferrer")
-              }
-            }}
-            className="w-full bg-transparent border-b border-border py-2 pr-10 text-sm focus:outline-none focus:border-accent transition-colors placeholder:text-muted-foreground"
+    <header className="bg-background sticky top-0 z-50 border-b border-border/60">
+      <div className="max-w-[1400px] mx-auto px-4 py-3 md:py-4 flex items-center justify-between gap-4">
+        <a href="#top" className="flex items-center gap-3 min-w-0 shrink-0">
+          <Image
+            src={SITE_FAVICON}
+            alt="Rent Me"
+            width={44}
+            height={44}
+            className="h-10 w-10 md:h-11 md:w-11 object-contain shrink-0"
+            priority
           />
+          <span className="hidden sm:block text-[10px] uppercase tracking-[0.15em] text-muted-foreground border-l border-border pl-3 leading-tight">
+            {SITE_CITY}
+            <span className="block text-[11px] normal-case tracking-normal font-sans opacity-90 mt-0.5">
+              {SITE_COMPANY_LEGAL}
+            </span>
+          </span>
+        </a>
+
+        <nav className="hidden lg:flex items-center gap-10 text-sm uppercase tracking-luxury text-muted-foreground">
+          {nav.map((item) => (
+            <a key={item.href} href={item.href} className="hover:text-accent transition-colors">
+              {item.label}
+            </a>
+          ))}
+        </nav>
+
+        <div className="flex items-center gap-3">
           <a
             href={whatsappUrl()}
             target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Написать в WhatsApp по запросу"
-            className="absolute right-0 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-accent transition-colors"
+            rel="noopener"
+            className="hidden sm:inline-flex items-center justify-center bg-accent text-accent-foreground px-5 py-2.5 md:px-6 md:py-3 uppercase text-xs md:text-sm tracking-luxury hover:bg-accent/90 transition-colors"
           >
-            <Search className="w-5 h-5" />
+            WhatsApp
           </a>
+
+          <button
+            type="button"
+            className="lg:hidden p-2 text-foreground hover:text-accent"
+            aria-expanded={open}
+            aria-label={open ? "Закрыть меню" : "Открыть меню"}
+            onClick={() => setOpen((o) => !o)}
+          >
+            {open ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+          </button>
         </div>
       </div>
+
+      {open ? (
+        <div className="lg:hidden border-t border-border bg-background px-4 py-4 flex flex-col gap-4">
+          {nav.map((item) => (
+            <a
+              key={item.href}
+              href={item.href}
+              className="text-sm uppercase tracking-luxury text-muted-foreground py-2 border-b border-border/60 last:border-0"
+              onClick={() => setOpen(false)}
+            >
+              {item.label}
+            </a>
+          ))}
+          <a
+            href={whatsappUrl()}
+            target="_blank"
+            rel="noopener"
+            className="inline-flex items-center justify-center bg-accent text-accent-foreground px-6 py-3 uppercase text-sm tracking-luxury"
+            onClick={() => setOpen(false)}
+          >
+            WhatsApp
+          </a>
+        </div>
+      ) : null}
     </header>
   )
 }

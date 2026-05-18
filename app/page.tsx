@@ -1,8 +1,8 @@
-import { TopBar, Header } from "@/components/header"
+import { Header } from "@/components/header"
 import { HeroSlider } from "@/components/hero-slider"
+import { About } from "@/components/about"
 import { Categories } from "@/components/categories"
 import { Gallery } from "@/components/gallery"
-import { About } from "@/components/about"
 import { Achievements } from "@/components/achievements"
 import { Pricing } from "@/components/pricing"
 import { MobileApp } from "@/components/mobile-app"
@@ -12,12 +12,11 @@ import { WhatsAppButton } from "@/components/whatsapp-button"
 export default function HomePage() {
   return (
     <main id="top" className="min-h-screen scroll-smooth">
-      <TopBar />
       <Header />
       <HeroSlider />
+      <About />
       <Categories />
       <Gallery />
-      <About />
       <Achievements />
       <Pricing />
       <MobileApp />

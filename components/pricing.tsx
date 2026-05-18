@@ -1,36 +1,37 @@
 import Image from "next/image"
 import { whatsappUrl } from "@/lib/site"
+import { CATALOG_CATEGORIES } from "@/lib/media"
 
 const products = [
   {
     name: "Винный бокал, хрусталь",
     price: 1200,
-    image: "https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?w=200&h=200&fit=crop&q=85",
+    image: CATALOG_CATEGORIES[10].image,
   },
   {
     name: "Подстановочная тарелка, золото",
     price: 900,
-    image: "https://images.unsplash.com/photo-1579541814924-49fef17c5be5?w=200&h=200&fit=crop&q=85",
+    image: CATALOG_CATEGORIES[8].image,
   },
   {
     name: "Банкетный стул, премиум",
     price: 4500,
-    image: "https://images.unsplash.com/photo-1503602642458-232111445657?w=200&h=200&fit=crop&q=85",
+    image: CATALOG_CATEGORIES[4].image,
   },
   {
     name: "Модульный стол (погонный метр)",
     price: 85000,
-    image: "https://images.unsplash.com/photo-1617806118233-18e1de247200?w=200&h=200&fit=crop&q=85",
+    image: CATALOG_CATEGORIES[2].image,
   },
   {
     name: "Скатерть премиум",
     price: 3500,
-    image: "https://images.unsplash.com/photo-1505932794465-147d1f1b2c97?w=200&h=200&fit=crop&q=85",
+    image: CATALOG_CATEGORIES[7].image,
   },
   {
     name: "Хайбол для напитков",
     price: 800,
-    image: "https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?w=200&h=200&fit=crop&q=85",
+    image: CATALOG_CATEGORIES[10].image,
   },
 ]
 
@@ -40,10 +41,10 @@ function formatPrice(price: number): string {
 
 export function Pricing() {
   return (
-    <section id="pricing" className="scroll-mt-28 md:scroll-mt-32 py-16 md:py-24 bg-background">
+    <section id="pricing" className="scroll-mt-20 md:scroll-mt-24 py-16 md:py-24 bg-background">
       <div className="max-w-[1400px] mx-auto px-4">
         <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-light tracking-wide mb-4">
-          ПРИМЕРЫ ЦЕН
+          Примеры цен
         </h2>
         <p className="text-muted-foreground mb-12 max-w-2xl">
           Ориентиры по популярным позициям; итоговая стоимость зависит от срока аренды, объёма и
@@ -56,15 +57,16 @@ export function Pricing() {
               key={product.name}
               href={whatsappUrl()}
               target="_blank"
-              rel="noopener noreferrer"
+              rel="noopener"
               className="group bg-card border border-border hover:border-accent transition-all duration-300 cursor-pointer block"
             >
               <div className="relative h-40 overflow-hidden">
                 <Image
                   src={product.image}
-                  alt={product.name}
+                  alt={`${product.name} — Rent Me Алматы`}
                   fill
                   className="object-cover group-hover:scale-105 transition-transform duration-500"
+                  sizes="(max-width: 768px) 50vw, 16vw"
                 />
               </div>
               <div className="p-4">
