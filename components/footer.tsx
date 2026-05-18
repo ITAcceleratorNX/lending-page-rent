@@ -21,9 +21,9 @@ export function Footer() {
               <Image
                 src={SITE_FAVICON}
                 alt="Rent Me"
-                width={56}
-                height={56}
-                className="h-12 w-12 md:h-14 md:w-14 object-contain shrink-0"
+                width={72}
+                height={72}
+                className="h-14 w-14 md:h-16 md:w-16 object-contain shrink-0"
               />
             </a>
             <p className="text-muted-foreground leading-relaxed max-w-md">

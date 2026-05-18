@@ -23,9 +23,9 @@ export function Header() {
           <Image
             src={SITE_FAVICON}
             alt="Rent Me"
-            width={44}
-            height={44}
-            className="h-10 w-10 md:h-11 md:w-11 object-contain shrink-0"
+            width={56}
+            height={56}
+            className="h-12 w-12 md:h-14 md:w-14 object-contain shrink-0"
             priority
           />
           <span className="hidden sm:block text-[10px] uppercase tracking-[0.15em] text-muted-foreground border-l border-border pl-3 leading-tight">
