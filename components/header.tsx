@@ -1,16 +1,17 @@
 "use client"
 
 import Image from "next/image"
+import Link from "next/link"
 import { Menu, X } from "lucide-react"
 import { useState } from "react"
 import { whatsappUrl, SITE_CITY, SITE_COMPANY_LEGAL } from "@/lib/site"
 import { SITE_FAVICON } from "@/lib/media"
 
 const nav = [
-  { label: "Главная", href: "#top" },
-  { label: "Каталог", href: "#catalog" },
-  { label: "О нас", href: "#about" },
-  { label: "Контакты", href: "#contacts" },
+  { label: "Главная", href: "/" },
+  { label: "Каталог", href: "/#catalog" },
+  { label: "О нас", href: "/#about" },
+  { label: "Контакты", href: "/#contacts" },
 ] as const
 
 export function Header() {
@@ -19,7 +20,7 @@ export function Header() {
   return (
     <header className="bg-background sticky top-0 z-50 border-b border-border/60">
       <div className="max-w-[1400px] mx-auto px-4 py-3 md:py-4 flex items-center justify-between gap-4">
-        <a href="#top" className="flex items-center gap-2 sm:gap-3 min-w-0 shrink-0" aria-label="Rent Me — на главную">
+        <Link href="/" className="flex items-center gap-2 sm:gap-3 min-w-0 shrink-0" aria-label="Rent Me — на главную">
           <Image
             src={SITE_FAVICON}
             alt=""
@@ -41,13 +42,13 @@ export function Header() {
               </span>
             </span>
           </div>
-        </a>
+        </Link>
 
         <nav className="hidden lg:flex items-center gap-10 text-sm uppercase tracking-luxury text-muted-foreground">
           {nav.map((item) => (
-            <a key={item.href} href={item.href} className="hover:text-accent transition-colors">
+            <Link key={item.href} href={item.href} className="hover:text-accent transition-colors">
               {item.label}
-            </a>
+            </Link>
           ))}
         </nav>
 
@@ -76,14 +77,14 @@ export function Header() {
       {open ? (
         <div className="lg:hidden border-t border-border bg-background px-4 py-4 flex flex-col gap-4">
           {nav.map((item) => (
-            <a
+            <Link
               key={item.href}
               href={item.href}
               className="text-sm uppercase tracking-luxury text-muted-foreground py-2 border-b border-border/60 last:border-0"
               onClick={() => setOpen(false)}
             >
               {item.label}
-            </a>
+            </Link>
           ))}
           <a
             href={whatsappUrl()}

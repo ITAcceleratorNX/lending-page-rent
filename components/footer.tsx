@@ -1,6 +1,7 @@
 "use client"
 
 import Image from "next/image"
+import Link from "next/link"
 import { MapPin, ArrowUp } from "lucide-react"
 import {
   SITE_ADDRESS_LINE,
@@ -17,8 +18,8 @@ export function Footer() {
       <div className="max-w-[1400px] mx-auto px-4">
         <div className="grid md:grid-cols-2 gap-12 lg:gap-20">
           <div className="space-y-6">
-            <a
-              href="#top"
+            <Link
+              href="/"
               className="flex items-center gap-3 w-fit hover:opacity-90 transition-opacity"
               aria-label="Rent Me — на главную"
             >
@@ -36,7 +37,7 @@ export function Footer() {
               <span className="font-serif text-2xl md:text-3xl font-light tracking-wide text-accent">
                 Rent Me
               </span>
-            </a>
+            </Link>
             <p className="text-muted-foreground leading-relaxed max-w-md">
               Rent Me — аренда мебели и декора для мероприятий
             </p>

@@ -1,11 +1,12 @@
-"use client"
-
 import { ArrowRight } from "lucide-react"
 import Image from "next/image"
-import { whatsappUrl } from "@/lib/site"
+import Link from "next/link"
 import { CATALOG_CATEGORIES, categoryAlt } from "@/lib/media"
+import { getProductCountByCategory } from "@/lib/catalog"
 
 export function Categories() {
+  const counts = getProductCountByCategory()
+
   return (
     <section id="catalog" className="scroll-mt-20 md:scroll-mt-24 py-16 md:py-24 bg-secondary/40">
       <div className="max-w-[1400px] mx-auto px-4">
@@ -14,17 +15,15 @@ export function Categories() {
           Каталог Rent Me
         </h2>
         <p className="text-muted-foreground max-w-2xl mb-10 leading-relaxed">
-          Выберите раздел — откроется WhatsApp с готовым текстом запроса. Уточним наличие и стоимость
-          аренды под ваше мероприятие в Алматы.
+          Выберите раздел каталога — откроется ассортимент с ценами. По клику на товар можно
+          посмотреть фото и написать нам в WhatsApp.
         </p>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5 md:gap-6">
           {CATALOG_CATEGORIES.map((category, index) => (
-            <a
+            <Link
               key={category.key}
-              href={whatsappUrl()}
-              target="_blank"
-              rel="noopener"
+              href={`/catalog/${category.key}`}
               className="group block border border-border bg-card text-left shadow-sm hover:shadow-md hover:border-accent transition-all duration-300"
               style={{ animationDelay: `${index * 40}ms` }}
             >
@@ -45,24 +44,22 @@ export function Categories() {
                     {category.name}
                   </p>
                   <p className="mt-2 text-[10px] uppercase tracking-luxury text-primary-foreground/85">
-                    Написать в WhatsApp
+                    {counts[category.key]} позиций
                   </p>
                 </div>
               </div>
-            </a>
+            </Link>
           ))}
         </div>
 
         <div className="flex justify-center mt-12">
-          <a
-            href={whatsappUrl()}
-            target="_blank"
-            rel="noopener"
-            className="inline-flex items-center gap-3 bg-accent text-accent-foreground px-8 py-4 uppercase text-sm tracking-luxury hover:bg-accent/90 transition-colors"
+          <Link
+            href="/#contacts"
+            className="inline-flex items-center gap-3 border border-accent text-accent px-8 py-4 uppercase text-sm tracking-luxury hover:bg-accent hover:text-accent-foreground transition-colors"
           >
-            <span>Связаться в WhatsApp</span>
+            <span>Контакты</span>
             <ArrowRight className="w-4 h-4" />
-          </a>
+          </Link>
         </div>
       </div>
     </section>
