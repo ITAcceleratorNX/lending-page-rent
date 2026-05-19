@@ -47,7 +47,7 @@ export function About() {
                 <a
                   href={whatsappUrl()}
                   target="_blank"
-                  rel="noopener"
+                  rel="noopener noreferrer"
                   className="mt-5 text-xs uppercase tracking-luxury text-accent hover:underline w-fit"
                 >
                   WhatsApp

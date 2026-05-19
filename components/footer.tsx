@@ -62,7 +62,7 @@ export function Footer() {
               <a
                 href={whatsappUrl()}
                 target="_blank"
-                rel="noopener"
+                rel="noopener noreferrer"
                 className="text-accent font-medium hover:underline"
               >
                 {SITE_PHONE_DISPLAY}

@@ -3,6 +3,7 @@ import Image from "next/image"
 import Link from "next/link"
 import { CATALOG_CATEGORIES, categoryAlt } from "@/lib/media"
 import { getProductCountByCategory } from "@/lib/catalog"
+import { whatsappUrl } from "@/lib/site"
 
 export function Categories() {
   const counts = getProductCountByCategory()
@@ -53,13 +54,15 @@ export function Categories() {
         </div>
 
         <div className="flex justify-center mt-12">
-          <Link
-            href="/#contacts"
+          <a
+            href={whatsappUrl()}
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-flex items-center gap-3 border border-accent text-accent px-8 py-4 uppercase text-sm tracking-luxury hover:bg-accent hover:text-accent-foreground transition-colors"
           >
-            <span>Контакты</span>
+            <span>Написать в WhatsApp</span>
             <ArrowRight className="w-4 h-4" />
-          </Link>
+          </a>
         </div>
       </div>
     </section>

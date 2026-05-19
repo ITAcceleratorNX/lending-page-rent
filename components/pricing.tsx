@@ -57,7 +57,7 @@ export function Pricing() {
               key={product.name}
               href={whatsappUrl()}
               target="_blank"
-              rel="noopener"
+              rel="noopener noreferrer"
               className="group bg-card border border-border hover:border-accent transition-all duration-300 cursor-pointer block"
             >
               <div className="relative h-40 overflow-hidden">

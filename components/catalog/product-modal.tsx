@@ -34,7 +34,10 @@ export function ProductModal({ product, category, open, onOpenChange }: ProductM
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="sm:max-w-xl md:max-w-2xl p-0 gap-0 overflow-hidden max-h-[90vh] overflow-y-auto">
+      <DialogContent
+        className="sm:max-w-xl md:max-w-2xl p-0 gap-0 overflow-hidden border-border shadow-xl"
+        closeClassName="top-3 right-3 z-20 flex size-10 items-center justify-center rounded-full border border-white/25 bg-black/50 text-white opacity-100 shadow-md backdrop-blur-sm transition-colors hover:bg-black/65 hover:opacity-100 focus:ring-white/40 focus:ring-offset-0 data-[state=open]:bg-black/50 data-[state=open]:text-white [&_svg:not([class*='size-'])]:size-5"
+      >
         <DialogHeader className="sr-only">
           <DialogTitle>{product.name}</DialogTitle>
         </DialogHeader>
@@ -70,7 +73,7 @@ export function ProductModal({ product, category, open, onOpenChange }: ProductM
             <p className="text-xs uppercase tracking-luxury text-muted-foreground mb-2">
               {category.name}
             </p>
-            <h2 className="font-serif text-2xl md:text-3xl font-light tracking-wide">
+            <h2 className="font-serif text-2xl md:text-3xl font-light tracking-wide leading-snug">
               {product.name}
             </h2>
           </div>
@@ -81,7 +84,7 @@ export function ProductModal({ product, category, open, onOpenChange }: ProductM
           <a
             href={whatsappUrl()}
             target="_blank"
-            rel="noopener"
+            rel="noopener noreferrer"
             className="inline-flex w-full sm:w-auto items-center justify-center gap-3 bg-accent text-accent-foreground px-8 py-4 uppercase text-sm tracking-luxury hover:bg-accent/90 transition-colors"
           >
             <span>Написать в WhatsApp</span>

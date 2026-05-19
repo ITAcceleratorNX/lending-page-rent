@@ -47,7 +47,7 @@ export function HeroSlider() {
             <a
               href={whatsappUrl()}
               target="_blank"
-              rel="noopener"
+              rel="noopener noreferrer"
               className="inline-flex items-center justify-center bg-accent text-accent-foreground px-8 py-3.5 uppercase text-sm tracking-luxury hover:bg-accent/90 transition-colors w-fit"
             >
               Связаться в WhatsApp
