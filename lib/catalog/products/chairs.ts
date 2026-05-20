@@ -16,7 +16,7 @@ function chair(
     name,
     priceAed,
     priceKzt: roundKztFromTable(priceKztFromTable),
-    images: getChairsImagePaths(slug) ?? productImagePaths("chairs", slug, 3),
+    images: getChairsImagePaths(slug) ?? productImagePaths("chairs", slug),
   }
 }
 

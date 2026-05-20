@@ -16,8 +16,7 @@ function tableSetting(
     name,
     priceAed,
     priceKzt: roundKztFromTable(priceKztFromTable),
-    images:
-      getTableSettingsImagePaths(slug) ?? productImagePaths("table-settings", slug, 3),
+    images: getTableSettingsImagePaths(slug) ?? productImagePaths("table-settings", slug),
   }
 }
 

@@ -16,8 +16,7 @@ function diningTable(
     name,
     priceAed,
     priceKzt: roundKztFromTable(priceKztFromTable),
-    images:
-      getDiningTablesImagePaths(slug) ?? productImagePaths("dining-tables", slug, 3),
+    images: getDiningTablesImagePaths(slug) ?? productImagePaths("dining-tables", slug),
   }
 }
 

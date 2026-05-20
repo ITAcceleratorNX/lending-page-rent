@@ -1,8 +1,8 @@
 "use client"
 
 import { ArrowRight, ChevronLeft, ChevronRight } from "lucide-react"
-import type { CatalogCategory, CatalogProduct } from "@/lib/catalog"
-import { formatProductPrice } from "@/lib/catalog"
+import type { CatalogCategory, CatalogProduct } from "@/lib/catalog/types"
+import { formatProductPrice } from "@/lib/catalog/pricing"
 import { whatsappUrl } from "@/lib/site"
 import {
   Carousel,

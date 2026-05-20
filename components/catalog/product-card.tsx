@@ -1,7 +1,7 @@
 "use client"
 
-import type { CatalogCategory, CatalogProduct } from "@/lib/catalog"
-import { formatProductPrice } from "@/lib/catalog"
+import type { CatalogCategory, CatalogProduct } from "@/lib/catalog/types"
+import { formatProductPrice } from "@/lib/catalog/pricing"
 import { categoryAlt } from "@/lib/media"
 import { ProductImage } from "./product-image"
 
@@ -20,7 +20,7 @@ export function ProductCard({ product, category, onSelect }: ProductCardProps) {
     >
       <div className="relative aspect-square overflow-hidden bg-white">
         <ProductImage
-          src={product.images[0]}
+          src={product.images[0] ?? category.image}
           fallbackSrc={category.image}
           alt={`${product.name} — ${categoryAlt(category.name)}`}
           sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 280px"

@@ -16,7 +16,7 @@ function set(
     name,
     priceAed,
     priceKzt: roundKztFromTable(priceKztFromTable),
-    images: getSetsImagePaths(slug) ?? productImagePaths("sets", slug, 3),
+    images: getSetsImagePaths(slug) ?? productImagePaths("sets", slug),
   }
 }
 

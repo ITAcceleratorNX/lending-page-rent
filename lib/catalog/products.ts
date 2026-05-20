@@ -19,7 +19,6 @@ function item(
   name: string,
   priceAed: number,
   priceKzt: number,
-  photoCount = 3,
 ): CatalogProduct {
   return {
     id: `${categoryKey}-${slug}`,
@@ -28,7 +27,7 @@ function item(
     name,
     priceAed,
     priceKzt: roundKztFromTable(priceKzt),
-    images: productImagePaths(categoryKey, slug, photoCount),
+    images: productImagePaths(categoryKey, slug),
   }
 }
 

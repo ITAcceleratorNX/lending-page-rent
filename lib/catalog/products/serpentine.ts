@@ -16,7 +16,7 @@ function serpentine(
     name,
     priceAed,
     priceKzt: roundKztFromTable(priceKztFromTable),
-    images: getSerpentineImagePaths(slug) ?? productImagePaths("serpentine", slug, 3),
+    images: getSerpentineImagePaths(slug) ?? productImagePaths("serpentine", slug),
   }
 }
 
