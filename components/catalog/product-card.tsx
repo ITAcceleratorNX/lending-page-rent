@@ -18,7 +18,7 @@ export function ProductCard({ product, category, onSelect }: ProductCardProps) {
       onClick={() => onSelect(product)}
       className="group text-left bg-card border border-border hover:border-accent transition-all duration-300 shadow-sm hover:shadow-md w-full"
     >
-      <div className="relative aspect-square overflow-hidden bg-secondary/30">
+      <div className="relative aspect-square overflow-hidden bg-white">
         <ProductImage
           src={product.images[0]}
           fallbackSrc={category.image}
