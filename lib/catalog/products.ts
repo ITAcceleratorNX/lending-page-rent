@@ -3,6 +3,9 @@ import { productImagePaths } from "./product-images"
 import { roundKztFromTable } from "./pricing"
 import { SETS_PRODUCTS } from "./products/sets"
 import { CHAIRS_PRODUCTS } from "./products/chairs"
+import { DINING_TABLES_PRODUCTS } from "./products/dining-tables"
+import { SERPENTINE_PRODUCTS } from "./products/serpentine"
+import { SOFAS_PRODUCTS } from "./products/sofas"
 import { TABLE_SETTINGS_PRODUCTS } from "./products/table-settings"
 import type { CatalogProduct, CategoryKey } from "./types"
 
@@ -35,43 +38,13 @@ export const CATALOG_PRODUCTS: CatalogProduct[] = [
 
   ...TABLE_SETTINGS_PRODUCTS,
 
-  // Обеденные столы — 11
-  item("dining-tables", "kremer-black-rect", "Стол Kremer прямоугольный чёрный", 592, 75_372),
-  item("dining-tables", "herold-gold-white", "Стол Herold золотой с белой столешницей", 291, 37_049),
-  item("dining-tables", "herold-silver-white", "Стол Herold серебристый с белой столешницей", 291, 37_049),
-  item("dining-tables", "cornell-round-gold", "Стол Cornell круглый золотой с белой столешницей", 491, 62_513),
-  item("dining-tables", "cornell-round-white", "Стол Cornell круглый белый с белой столешницей", 491, 62_513),
-  item("dining-tables", "cornell-round-black", "Стол Cornell круглый чёрный с белой столешницей", 386, 49_145),
-  item("dining-tables", "cornell-rect-gold-glass", "Стол Cornell прямоугольный золотой со стеклянной столешницей", 595, 75_754),
-  item("dining-tables", "cornell-rect-white-glass", "Стол Cornell прямоугольный белый со стеклянной столешницей", 595, 75_754),
-  item("dining-tables", "cornell-rect-black-glass", "Стол Cornell прямоугольный чёрный со стеклянной столешницей", 595, 75_754),
-  item("dining-tables", "jones-folding-rect", "Стол Jones складной прямоугольный 120×60 см", 60, 7_639),
-  item("dining-tables", "jones-folding-round", "Стол Jones складной круглый 180 см", 180, 22_917),
+  ...DINING_TABLES_PRODUCTS,
 
-  // Столы-серпантин — 15
-  item("serpentine", "largo-tablecloth", "Скатерть Largo для 1 секции стола-серпантина", 197, 25_082),
-  item("serpentine", "gable-gold", "Стол-серпантин Gable золотой со стеклянной столешницей", 248, 31_575),
-  item("serpentine", "gable-silver", "Стол-серпантин Gable серебристый со стеклянной столешницей", 248, 31_575),
-  item("serpentine", "nevu-u-shaped", "Комплект стола-серпантина Nevu U-образный", 816, 103_892),
-  item("serpentine", "u-shaped-short", "Комплект стола-серпантина U-образный короткий", 656, 83_521),
-  item("serpentine", "wave-2-gold", "Комплект стола-серпантина Wave 2 секции золотой", 496, 63_150),
-  item("serpentine", "wave-2-silver", "Комплект стола-серпантина Wave 2 секции серебристый", 496, 63_150),
-  item("serpentine", "halfmoon-gold", "Комплект стола-серпантина Halfmoon золотой", 496, 63_150),
-  item("serpentine", "halfmoon-silver", "Комплект стола-серпантина Halfmoon серебристый", 496, 63_150),
-  item("serpentine", "horseshoe-gold", "Комплект стола-серпантина Horseshoe золотой", 744, 94_725),
-  item("serpentine", "horseshoe-silver", "Комплект стола-серпантина Horseshoe серебристый", 744, 94_725),
-  item("serpentine", "wave-4-gold", "Комплект стола-серпантина Wave 4 секции золотой", 992, 126_300),
-  item("serpentine", "wave-4-silver", "Комплект стола-серпантина Wave 4 секции серебристый", 992, 126_300),
-  item("serpentine", "donut-silver", "Стол-серпантин Donut на 16 гостей серебристый", 992, 126_300),
-  item("serpentine", "donut-gold", "Стол-серпантин Donut на 16 гостей золотой", 992, 126_300),
+  ...SERPENTINE_PRODUCTS,
 
   ...CHAIRS_PRODUCTS,
 
-  // Диваны — 4 (эталон: только линейка Liepa)
-  item("sofas", "liepa-bench", "Банкетка Liepa, цвет слоновая кость", 497, 63_277),
-  item("sofas", "liepa-one-seating", "Кресло-банкетка Liepa одноместная, цвет слоновая кость", 312, 39_723),
-  item("sofas", "liepa-sofa", "Диван Liepa, цвет слоновая кость", 682, 86_831),
-  item("sofas", "liepa-armchair", "Кресло Liepa, цвет слоновая кость", 381, 48_508),
+  ...SOFAS_PRODUCTS,
 
   // Лаунж и коктейльные столы — 15
   item("lounge", "jazz-high", "Стол Jazz высокий золотой", 220, 28_010),
