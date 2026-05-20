@@ -68,10 +68,10 @@ export const CATALOG_PRODUCTS: CatalogProduct[] = [
   ...CHAIRS_PRODUCTS,
 
   // Диваны — 4 (эталон: только линейка Liepa)
-  item("sofas", "liepa-bench", "Банкетка Liepa, цвет слоновая кость", 497, 63_277),
-  item("sofas", "liepa-one-seating", "Кресло-банкетка Liepa одноместная, цвет слоновая кость", 312, 39_723),
-  item("sofas", "liepa-sofa", "Диван Liepa, цвет слоновая кость", 682, 86_831),
-  item("sofas", "liepa-armchair", "Кресло Liepa, цвет слоновая кость", 381, 48_508),
+  item("sofas", "liepa-bench", "Банкетка Liepa, цвет слоновой кости", 497, 63_277),
+  item("sofas", "liepa-one-seating", "Кресло-банкетка Liepa одноместная, цвет слоновой кости", 312, 39_723),
+  item("sofas", "liepa-sofa", "Диван Liepa, цвет слоновой кости", 682, 86_831),
+  item("sofas", "liepa-armchair", "Кресло Liepa, цвет слоновой кости", 381, 48_508),
 
   // Лаунж и коктейльные столы — 15
   item("lounge", "jazz-high", "Стол Jazz высокий золотой", 220, 28_010),
@@ -79,11 +79,11 @@ export const CATALOG_PRODUCTS: CatalogProduct[] = [
   item("lounge", "oliver", "Коктейльный стол Oliver золотой", 97, 12_350),
   item("lounge", "lanza", "Стол Lanza золотой", 67, 8_530),
   item("lounge", "norman-large", "Стол Norman большой, зеркальная столешница", 210, 26_737),
-  item("lounge", "scholl-large", "Стол Scholl большой, зеркальная столeshница", 340, 43_288),
-  item("lounge", "norman-fur-large", "Стол Norman Fur большой, зеркальная столeshница", 240, 30_556),
-  item("lounge", "ruffles-medium", "Стол Ruffles средний, зеркальная столeshница", 139, 17_697),
-  item("lounge", "norman-medium", "Стол Norman средний, зеркальная столeshница", 64, 8_148),
-  item("lounge", "norman-small", "Стол Norman маленький, зеркальная столeshница", 55, 7_003),
+  item("lounge", "scholl-large", "Стол Scholl большой, зеркальная столешница", 340, 43_288),
+  item("lounge", "norman-fur-large", "Стол Norman Fur большой, зеркальная столешница", 240, 30_556),
+  item("lounge", "ruffles-medium", "Стол Ruffles средний, зеркальная столешница", 139, 17_697),
+  item("lounge", "norman-medium", "Стол Norman средний, зеркальная столешница", 64, 8_148),
+  item("lounge", "norman-small", "Стол Norman маленький, зеркальная столешница", 55, 7_003),
   item("lounge", "norman-velvet-small", "Стол Norman бархатный маленький, розовый", 55, 7_003),
   item("lounge", "norman-set-3", "Набор столов Norman, 3 круглых стола", 359, 45_707),
   item("lounge", "scholl-set-3", "Набор столов Scholl, 3 круглых стола", 564, 71_808),
