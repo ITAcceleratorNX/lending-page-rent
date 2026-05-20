@@ -11,7 +11,7 @@ export {
   getProductPriceKzt,
   roundKztFromTable,
 } from "./pricing"
-export { productImagePaths } from "./product-images"
+export { CATALOG_PHOTOS_BASE, productImagePaths } from "./product-images"
 export { CATALOG_PRODUCTS, getCategoryFallbackImage } from "./products"
 
 export function getAllCategorySlugs(): CategoryKey[] {
