@@ -2,6 +2,8 @@ import { CATALOG_CATEGORIES } from "@/lib/media"
 import { productImagePaths } from "./product-images"
 import { roundKztFromTable } from "./pricing"
 import { SETS_PRODUCTS } from "./products/sets"
+import { CHAIRS_PRODUCTS } from "./products/chairs"
+import { TABLE_SETTINGS_PRODUCTS } from "./products/table-settings"
 import type { CatalogProduct, CategoryKey } from "./types"
 
 const categoryImage = Object.fromEntries(
@@ -31,19 +33,7 @@ function item(
 export const CATALOG_PRODUCTS: CatalogProduct[] = [
   ...SETS_PRODUCTS,
 
-  // Готовые сервировки — 12
-  item("table-settings", "violet-cream", "Сервировка «Лиловый крем»", 81, 10_313),
-  item("table-settings", "black-dot", "Сервировка «Чёрная точка»", 109, 13_878),
-  item("table-settings", "snow-satin", "Сервировка «Снежный атлас»", 94, 11_968),
-  item("table-settings", "peel", "Сервировка «Peel»", 79, 10_058),
-  item("table-settings", "slow", "Сервировка «Slow»", 87, 11_077),
-  item("table-settings", "black-and-white", "Сервировка «Чёрно-белая»", 103, 13_114),
-  item("table-settings", "total-grey", "Сервировка «Полностью серая»", 81, 10_313),
-  item("table-settings", "ramadan", "Сервировка «Рамадан»", 173, 22_026),
-  item("table-settings", "moon", "Сервировка «Луна»", 103, 13_114),
-  item("table-settings", "candy", "Сервировка «Конфетная»", 94, 11_968),
-  item("table-settings", "total-white", "Сервировка «Полностью белая»", 89, 11_331),
-  item("table-settings", "graphite", "Сервировка «Графитовая»", 113, 14_387),
+  ...TABLE_SETTINGS_PRODUCTS,
 
   // Обеденные столы — 11
   item("dining-tables", "kremer-black-rect", "Стол Kremer прямоугольный чёрный", 592, 75_372),
@@ -75,18 +65,7 @@ export const CATALOG_PRODUCTS: CatalogProduct[] = [
   item("serpentine", "donut-silver", "Стол-серпантин Donut на 16 гостей серебристый", 992, 126_300),
   item("serpentine", "donut-gold", "Стол-серпантин Donut на 16 гостей золотой", 992, 126_300),
 
-  // Стулья — 11
-  item("chairs", "tempo-black-red", "Стул Tempo чёрный с красным сиденьем и спинкой", 59, 7_512),
-  item("chairs", "panton-clear", "Стул Panton прозрачный", 67, 8_530),
-  item("chairs", "tempo-gold-teddy", "Стул Tempo золотой с мягкими вставками из ткани «Teddy»", 59, 7_512),
-  item("chairs", "rattan-tempo-gold", "Стул Rattan Tempo золотой с бежевым сиденьем", 63, 8_021),
-  item("chairs", "tempo-black-mix", "Стул Tempo чёрный микс с мягким сиденьем из ткани «Teddy»", 59, 7_512),
-  item("chairs", "tempo-gold-mix", "Стул Tempo золотой микс с красным сиденьем", 59, 7_512),
-  item("chairs", "dupont-gold", "Стул Dupont золотой, белый велюр", 55, 7_002),
-  item("chairs", "dupont-silver", "Стул Dupont серебристый, пудрово-розовый велюр", 68, 8_657),
-  item("chairs", "octave-gold", "Стул Octave золотой, белый", 35, 4_456),
-  item("chairs", "orpheus", "Стул Orpheus, велюр пудрово-розовый", 43, 5_474),
-  item("chairs", "warren-folding", "Стул Warren складной, розовый", 19, 2_419),
+  ...CHAIRS_PRODUCTS,
 
   // Диваны — 4 (эталон: только линейка Liepa)
   item("sofas", "liepa-bench", "Банкетка Liepa, цвет слоновая кость", 497, 63_277),

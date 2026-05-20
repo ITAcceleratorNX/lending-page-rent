@@ -1,6 +1,7 @@
 import { productImagePaths } from "../product-images"
 import { roundKztFromTable } from "../pricing"
 import type { CatalogProduct } from "../types"
+import { getSetsImagePaths } from "./sets-images"
 
 function set(
   slug: string,
@@ -15,7 +16,7 @@ function set(
     name,
     priceAed,
     priceKzt: roundKztFromTable(priceKztFromTable),
-    images: productImagePaths("sets", slug, 3),
+    images: getSetsImagePaths(slug) ?? productImagePaths("sets", slug, 3),
   }
 }
 
