@@ -42,7 +42,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/images/hero/hero-main-banner.png",
+        url: "/images/hero/hero-main-banner-v2.png",
         width: 1200,
         height: 630,
         alt: "Аренда мебели и декора для мероприятий — Rent Me Алматы",

@@ -2,80 +2,80 @@
 export const SITE_FAVICON = "/images/favicon.png"
 
 /** Сценарии каталога — /public/images */
-export const HERO_MAIN_BANNER = "/images/hero/hero-main-banner.png"
+export const HERO_MAIN_BANNER = "/images/hero/hero-main-banner-v2.png"
 
 export const APP_MOCKUP_CONCEPT = "/images/app/app-mockup-concept.png"
 
 export const FEATURES = [
   {
-    image: "/images/features/feature-easy-order.png",
+    image: "/images/features/feature-easy-order-v2.png",
     title: "Удобный заказ",
     text: "Оформление через WhatsApp за пару минут",
   },
   {
-    image: "/images/features/feature-consultation.png",
+    image: "/images/features/feature-consultation-v2.png",
     title: "Помощь в подборе",
     text: "Поможем собрать комплект под ваше мероприятие",
   },
   {
-    image: "/images/features/feature-wide-range.png",
+    image: "/images/features/feature-wide-range-v2.png",
     title: "Широкий ассортимент",
     text: "Мебель, декор, сервировка и текстиль в одном месте",
   },
   {
-    image: "/images/features/feature-service.png",
+    image: "/images/features/feature-service-v2.png",
     title: "Сервис и сопровождение",
     text: "Доставка, монтаж и поддержка на мероприятии",
   },
 ] as const
 
 export const CATALOG_CATEGORIES = [
-  { name: "Комплекты", image: "/images/categories/category-01-sets.png", key: "sets" },
+  { name: "Комплекты", image: "/images/categories/category-01-sets-v2.png", key: "sets" },
   {
     name: "Готовые сервировки",
-    image: "/images/categories/category-02-table-settings.png",
+    image: "/images/categories/category-02-table-settings-v2.png",
     key: "table-settings",
   },
   {
     name: "Обеденные столы",
-    image: "/images/categories/category-03-dining-tables.png",
+    image: "/images/categories/category-03-dining-tables-v2.png",
     key: "dining-tables",
   },
   {
     name: "Столы-серпантин",
-    image: "/images/categories/category-04-serpentine-tables.png",
+    image: "/images/categories/category-04-serpentine-tables-v2.png",
     key: "serpentine",
   },
-  { name: "Стулья", image: "/images/categories/category-05-chairs.png", key: "chairs" },
-  { name: "Диваны", image: "/images/categories/category-06-sofas.png", key: "sofas" },
+  { name: "Стулья", image: "/images/categories/category-05-chairs-v2.png", key: "chairs" },
+  { name: "Диваны", image: "/images/categories/category-06-sofas-v2.png", key: "sofas" },
   {
     name: "Лаунж и коктейльные столы",
-    image: "/images/categories/category-07-lounge-tables.png",
+    image: "/images/categories/category-07-lounge-tables-v2.png",
     key: "lounge",
   },
   {
     name: "Скатерти",
-    image: "/images/categories/category-08-tablecloths.png",
+    image: "/images/categories/category-08-tablecloths-v2.png",
     key: "tablecloths",
   },
   {
     name: "Подстановочные тарелки",
-    image: "/images/categories/category-09-charger-plates.png",
+    image: "/images/categories/category-09-charger-plates-v2.png",
     key: "chargers",
   },
   {
     name: "Обеденные тарелки",
-    image: "/images/categories/category-10-dining-plates.png",
+    image: "/images/categories/category-10-dining-plates-v2.png",
     key: "dinner-plates",
   },
   {
     name: "Бокалы и стекло",
-    image: "/images/categories/category-11-glassware.png",
+    image: "/images/categories/category-11-glassware-v2.png",
     key: "glassware",
   },
   {
     name: "Декор, вазы и композиции",
-    image: "/images/categories/category-12-decor-vases.png",
+    image: "/images/categories/category-12-decor-vases-v2.png",
     key: "decor-vases",
   },
 ] as const
