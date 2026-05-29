@@ -18,7 +18,7 @@ export const FEATURES = [
     text: "Поможем собрать комплект под ваше мероприятие",
   },
   {
-    image: "/images/features/feature-wide-range-v2.png",
+    image: "/images/features/feature-wide-range-v3.png",
     title: "Широкий ассортимент",
     text: "Мебель, декор, сервировка и текстиль в одном месте",
   },
